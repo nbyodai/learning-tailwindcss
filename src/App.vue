@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/build/tailwind.css" />
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <!-- production version, optimized for size and speed -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
-  </head>
-
-  <body class="bg-gray-200">
-    <div id="app" class="bg-gray-100 flex">
+<template>
+    <div id="app">
+      <div class="bg-gray-100 flex">
       <div
         class="px-8 py-12 mx-w-md mx-auto sm:max-w-xl lg:max-w-full lg:w-1/2 lg:py-24 lg:px-12"
       >
@@ -47,6 +35,7 @@
           alt="woman on a swing"
         />
       </div>
+      </div>
       <div>
         <div
           class="max-w-md sm:max-w-xl lg:max-w-6xl mx-auto px-8 lg:px-12 py-8"
@@ -58,10 +47,51 @@
         </div>
       </div>
     </div>
-  </body>
-  <script>
-    var app = new Vue({
-      el: "#app"
-    });
-  </script>
-</html>
+</template>
+
+<script>
+export default {
+    name: 'app',
+    components: {},
+    data() {
+        return {
+          officeLocations: [
+            {
+              city: "Lagos",
+              staffCount: 120,
+              deaptCount: 56,
+              depts: ["ALL"],
+              imageUrl: "/img/lagos.jpg",
+              imageAlt: "Lagos Skyline"
+            },
+            {
+              city: "Owerri",
+              staffCount: 120,
+              deaptCount: 56,
+              depts: ["CS", "DS"],
+              imageUrl: "/img/owerri.jpg",
+              imageAlt: "Owerri Location"
+            },
+            {
+              city: "Nairobi",
+              staffCount: 120,
+              deaptCount: 56,
+              depts: [],
+              imageUrl: "/img/nairobi.jpg",
+              imageAlt: "Abuja Central"
+            },
+            {
+              city: "Kano",
+              staffCount: 120,
+              deaptCount: 56,
+              depts: [],
+              imageUrl: "/img/kano.jpg",
+              imageAlt: "Kano Hills"
+            }
+          ]
+        };
+      }
+}
+</script>
+
+<style src="./assets/tailwind.css"></style>
