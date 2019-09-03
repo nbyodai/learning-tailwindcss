@@ -42,8 +42,22 @@
         >
           <h2 class="text-xl text-gray-900">Carbon Locations</h2>
           <p class="text-gray-600">
-            A list of all carbon locations present and future.
+            A list of Carbon's office locations present and future.
           </p>
+          <div class="flex flex-wrap -mx-4">
+            <div class="mt-6 w-full px-4 lg:w-1/2 xl:w-1/3" v-for="location in officeLocations" :key="location.city">
+              <div class="flex items-center rounded-lg bg-white shadow-lg overflow-hidden">
+                <img class="h-32 w-32 flex-shrink-0" :src="location.imageUrl" :alt="location.imageAlt">
+                <div class="px-6 py-4">
+                  <h3 class="text-lg font-semibold text-gray-800">{{ location.city }}</h3>
+                  <p class="text-gray-600">{{ location.staffCount }} staff strength</p>
+                  <div class="mt-4">
+                      <a href="#" class="text-indigo-500 hover:text-indigo-400 font-semibold text-sm">{{ location.departments }} departments</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -59,7 +73,7 @@ export default {
             {
               city: "Lagos",
               staffCount: 120,
-              deaptCount: 56,
+              departments: 6,
               depts: ["ALL"],
               imageUrl: "/img/lagos.jpg",
               imageAlt: "Lagos Skyline"
@@ -67,7 +81,7 @@ export default {
             {
               city: "Owerri",
               staffCount: 120,
-              deaptCount: 56,
+              departments: 2,
               depts: ["CS", "DS"],
               imageUrl: "/img/owerri.jpg",
               imageAlt: "Owerri Location"
@@ -75,7 +89,7 @@ export default {
             {
               city: "Nairobi",
               staffCount: 120,
-              deaptCount: 56,
+              departments: 3,
               depts: [],
               imageUrl: "/img/nairobi.jpg",
               imageAlt: "Abuja Central"
@@ -83,9 +97,9 @@ export default {
             {
               city: "Kano",
               staffCount: 120,
-              deaptCount: 56,
+              departments: 1,
               depts: [],
-              imageUrl: "/img/kano.jpg",
+              imageUrl: "/img/kano.jpeg",
               imageAlt: "Kano Hills"
             }
           ]
